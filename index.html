@@ -6,7 +6,6 @@
     <title>Gordon Acquisition Systems | Austin Lead Infrastructure</title>
     <script src="https://tailwindcss.com"></script>
     <style>
-        /* Precision hover scaling mechanics matching the Bolt layout exactly */
         .hover-scale {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -21,10 +20,10 @@
 </head>
 <body class="bg-[#0b0f17] text-gray-100 font-sans min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-orange-500/30">
 
-    <!-- Premium Ambient Mesh Glow Background Layers -->
+    <!-- Ambient Mesh Glow Background -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-gradient-to-b from-orange-500/10 via-blue-500/5 to-transparent rounded-full blur-[140px] pointer-events-none"></div>
 
-    <!-- Header / Authoritative Corporate Navigation Matrix -->
+    <!-- Header Navigation -->
     <header class="relative z-10 max-w-6xl w-full mx-auto px-6 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 border-b border-gray-900 pb-6">
         <div class="text-center sm:text-left">
             <h1 class="text-xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">
@@ -39,31 +38,27 @@
                 <a href="#pricing" class="hover:text-orange-400 transition duration-200">PRICING</a>
             </nav>
             <div class="flex items-center gap-2 bg-[#121824] border border-gray-800 px-3 py-1.5 rounded-lg">
-                <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981]"></span>
+                <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981] animate-pulse"></span>
                 <span class="text-[10px] font-mono font-bold text-emerald-400">LOCAL LEAD GENERATION SYSTEMS</span>
             </div>
         </div>
     </header>
 
-    <!-- Main Front-End Conversion Space -->
+    <!-- Main Front-End Space -->
     <main class="relative z-10 max-w-6xl w-full mx-auto px-6 py-16 space-y-32">
         
-        <!-- Hero Dynamic Grid -->
+        <!-- Hero Section -->
         <section class="grid lg:grid-cols-12 gap-12 items-center">
-            <!-- Left Branding Pitch -->
             <div class="lg:col-span-7 space-y-6">
                 <div class="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 px-3 py-1 rounded-full">
                     <span class="text-[10px] font-mono text-orange-400 font-bold tracking-wider uppercase">★ SYSTEM HUB ACTIVE</span>
                 </div>
-                
                 <h2 class="text-4xl sm:text-6xl font-black text-white tracking-tight leading-[1.1]">
                     We Catch the Customers Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-400 to-amber-500">Competitors Miss.</span>
                 </h2>
-                
                 <p class="text-gray-400 leading-relaxed text-sm sm:text-base max-w-xl font-light">
                     We build high-converting local business websites and equip them with dedicated local tracking phone numbers. When a hot lead finds your business online, our automated standby systems make sure they get a text response within 60 seconds—securing the job for your crew before they call the next company on Google.
                 </p>
-
                 <div class="pt-2 flex flex-wrap gap-4 text-xs font-mono font-semibold">
                     <a href="#simulator" class="bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white px-6 py-3.5 rounded-xl transition duration-200 shadow-lg shadow-orange-500/20 active:scale-[0.98]">
                         Test the Missed Call System
@@ -74,7 +69,7 @@
                 </div>
             </div>
 
-            <!-- Right Interactive Sandbox Component (Simulator) -->
+            <!-- Simulator Card -->
             <div id="simulator" class="lg:col-span-5 w-full max-w-md mx-auto">
                 <div class="bg-[#111622] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-2xl relative overflow-hidden group border-t-2 border-t-orange-500">
                     <div class="mb-6">
@@ -86,7 +81,6 @@
                             Type your business name and callback number below to simulate how our background framework captures a local lead and fires an instantaneous routing handshake alert.
                         </p>
                     </div>
-                    
                     <form class="space-y-4" onsubmit="event.preventDefault(); alert('[System Connection Successful] Your simulation lead has been logged. In a live setup, your customer would receive an automated text back within 60 seconds, and the lead would pop up instantly on your tracking sheet.');">
                         <div>
                             <label class="block text-[10px] font-mono uppercase tracking-wider text-gray-400 mb-1.5 font-bold">Your Company Name</label>
@@ -100,7 +94,6 @@
                             Test the Instant Response System
                         </button>
                     </form>
-
                     <div class="mt-4 pt-4 border-t border-gray-900 flex justify-between items-center text-[10px] font-mono text-gray-500">
                         <span>STATUS: HOOK_ARMED</span>
                         <span class="text-blue-400">SECURE DISPATCH</span>
@@ -108,7 +101,7 @@
                 </div>
             </div>
         </section>
-        <!-- Technical Capabilities Matrix (Cards Grow on Hover) -->
+        <!-- Service Matrix with Fixed SVG Icons -->
         <section id="services" class="space-y-12">
             <div class="text-center max-w-xl mx-auto space-y-2">
                 <p class="text-xs font-mono font-bold text-orange-500 tracking-widest uppercase">WHAT WE DEPLOY</p>
@@ -116,25 +109,28 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
                 <div class="bg-[#111622] border border-gray-900 p-8 rounded-2xl hover-scale cursor-pointer group">
                     <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 mb-6 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.72l.54 2.22a1 1 0 01-.27.94l-2.03 2.03a15.11 15.11 0 005.67 5.67l2.03-2.03a1 1 0 01.94-.27l2.22.54a1 1 0 01.72.94V19a2 2 0 01-2 2h-1C9.71 21 3 14.29 3 7V5z"/></svg>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.72l.54 2.22a1 1 0 01-.27.94l-2.03 2.03a15.11 15.11 0 005.67 5.67l2.03-2.03a1 1 0 01.94-.27l2.22.54a1 1 0 01.72.94V19a2 2 0 01-2 2h-1C9.71 21 3 14.29 3 7V5z"/></svg>
                     </div>
                     <h4 class="text-lg font-bold text-white mb-3">24/7 Missed Call Rescue</h4>
                     <p class="text-gray-400 text-sm leading-relaxed font-light">We link a dedicated local tracking number to your cell phone. If you are out in the field and miss a call, our system instantly texts the customer back automatically to book the job before they call your competitors.</p>
                 </div>
 
+                <!-- Card 2 -->
                 <div class="bg-[#111622] border border-gray-900 p-8 rounded-2xl hover-scale cursor-pointer group">
                     <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-6 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                     </div>
                     <h4 class="text-lg font-bold text-white mb-3">High-Converting Web Storefronts</h4>
                     <p class="text-gray-400 text-sm leading-relaxed font-light">We design and launch custom, lightning-fast dark-mode portfolios built specifically to look professional, display your local service areas, and drive high-intent calls straight to your crew.</p>
                 </div>
 
+                <!-- Card 3 -->
                 <div class="bg-[#111622] border border-gray-900 p-8 rounded-2xl hover-scale cursor-pointer group">
                     <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-6 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
                     </div>
                     <h4 class="text-lg font-bold text-white mb-3">Turnkey System Setup</h4>
                     <p class="text-gray-400 text-sm leading-relaxed font-light">We handle 100% of the technical setup. We secure your local phone number, host your files, and route your data into a simple, private Google Sheet tracking spreadsheet so you can see your leads in real-time.</p>
@@ -142,13 +138,12 @@
             </div>
         </section>
 
-        <!-- Plain-English Public Activity Log Terminal Layout Component -->
+        <!-- Live Ticker Terminal -->
         <section class="max-w-4xl mx-auto space-y-6">
             <div class="text-center space-y-1">
                 <p class="text-xs font-mono font-bold text-blue-400 uppercase tracking-widest">LIVE DISPATCH ACTIVE LOG</p>
                 <h3 class="text-2xl font-black text-white tracking-tight">System Tracking Ticker</h3>
             </div>
-            
             <div class="bg-[#050911] border border-gray-800 rounded-xl overflow-hidden shadow-2xl font-mono text-xs">
                 <div class="bg-[#111622] px-4 py-3 border-b border-gray-900 flex justify-between items-center text-gray-500">
                     <div class="flex items-center gap-2">
@@ -173,7 +168,7 @@
                 </div>
             </div>
         </section>
-        <!-- Turnkey Growth Packages Pricing Grid -->
+        <!-- Pricing Matrix Grid -->
         <section id="pricing" class="space-y-12">
             <div class="text-center max-w-xl mx-auto space-y-2">
                 <p class="text-xs font-mono font-bold text-amber-500 tracking-widest uppercase">STRIPE DEPLOYMENT PACKAGES</p>
@@ -259,13 +254,12 @@
             </div>
         </section>
 
-        <!-- System Documentation FAQs accordion section -->
+        <!-- FAQs Section -->
         <section class="max-w-4xl mx-auto space-y-8">
             <div class="text-center space-y-1">
-                <p class="text-xs font-mono font-bold text-gray-500 uppercase tracking-widest">SYSTEM QUESTIONS</p>
+                <p class="text-xs font-mono text-gray-500 uppercase tracking-widest">SYSTEM QUESTIONS</p>
                 <h3 class="text-2xl font-black text-white tracking-tight">Frequently Asked Questions</h3>
             </div>
-            
             <div class="space-y-4">
                 <details class="bg-[#111622] border border-gray-900 rounded-xl p-5 cursor-pointer group" open>
                     <summary class="text-sm font-bold text-white flex justify-between items-center list-none select-none">
@@ -276,7 +270,6 @@
                         No, you don't touch a single piece of software. We completely secure, buy, and host your local tracking phone number for you, design your website storefront, and route all system logic directly to your current cell phone so you can operate your business normally.
                     </p>
                 </details>
-
                 <details class="bg-[#111622] border border-gray-900 rounded-xl p-5 cursor-pointer group">
                     <summary class="text-sm font-bold text-white flex justify-between items-center list-none select-none">
                         What happens if I miss a customer call while working on a job site?
@@ -286,7 +279,6 @@
                         The exact second our tracking line detects a missed call, the background system intercepts the customer's cell line and fires a customizable, professional text back to them automatically. This opens an immediate conversation line and keeps them from calling your competitors while you are busy.
                     </p>
                 </details>
-
                 <details class="bg-[#111622] border border-gray-900 rounded-xl p-5 cursor-pointer group">
                     <summary class="text-sm font-bold text-white flex justify-between items-center list-none select-none">
                         Are there any hidden fees or hosting platform costs?
@@ -299,10 +291,15 @@
             </div>
         </section>
 
-        <!-- Geographic Trust Anchor Card -->
+        <!-- Geographic Trust Anchor -->
         <section class="max-w-4xl mx-auto pt-12">
             <div class="bg-[#111622] border border-gray-900 rounded-xl p-4 text-center text-xs font-mono text-gray-400 shadow-md">
                 📍 Primary System Deployment Footprint: Austin / Leander / Round Rock, Texas Service Area Hub.
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Layout -->
     <!-- Secure Infrastructure Footer Layout -->
     <footer class="relative z-10 max-w-6xl w-full mx-auto px-6 pb-8 mt-24 border-t border-gray-900 pt-6">
         <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left text-[11px] font-mono text-gray-600">
@@ -313,6 +310,5 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>
