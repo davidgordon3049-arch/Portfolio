@@ -1,473 +1,278 @@
-import { useState } from 'react';
-import { Phone, Globe, Settings, CheckCircle, ChevronDown, ChevronUp, Building2, Zap, Users } from 'lucide-react';
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gordon Acquisition Systems | Austin Lead Infrastructure</title>
+    <script src="https://tailwindcss.com"></script>
+    <style>
+        .hover-card {
+            transition: all 0.3s ease-in-out;
+        }
+        .hover-card:hover {
+            transform: translateY(-5px);
+            border-color: #f97316;
+            box-shadow: 0 10px 30px -10px rgba(249, 115, 22, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-[#090d16] text-gray-200 font-sans min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-orange-500/20">
 
-function App() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [companyName, setCompanyName] = useState('');
-  const [mobileNumber, setMobileNumber] = useState('');
+    <!-- Ambient Glow Background -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[400px] bg-gradient-to-b from-orange-500/10 via-transparent to-transparent rounded-full blur-[120px] pointer-events-none"></div>
 
-  const handleTestSystem = () => {
-    if (companyName.trim() && mobileNumber.trim()) {
-      alert(`[System Connection Successful] Your simulation lead has been logged. In a live setup, your customer would receive an automated text back within 60 seconds, and the lead would pop up instantly on your tracking sheet.`);
-    }
-  };
-
-  const scrollToDemo = () => {
-    document.getElementById('demo-section')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const scrollToPricing = () => {
-    document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  return (
-    <div className="min-h-screen bg-[#030712] text-white font-['Inter',sans-serif]">
-      {/* Ambient Background Glows */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[150px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[150px]" />
-      </div>
-
-      {/* Navigation */}
-      <nav className="relative z-50 px-6 lg:px-12 py-6">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <h1 className="text-lg md:text-xl font-extrabold tracking-[0.15em] uppercase">
-            Gordon Acquisition Systems
-          </h1>
-          <div className="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 rounded-full px-4 py-2">
-            <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-            </span>
-            <span className="text-sm font-medium text-emerald-400">Local Lead Generation Systems</span>
-          </div>
+    <!-- Navigation Bar Layout -->
+    <header class="relative z-10 max-w-6xl w-full mx-auto px-6 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 border-b border-gray-900 pb-6">
+        <div class="text-center sm:text-left">
+            <h1 class="text-lg font-black tracking-wider text-white">GORDON ACQUISITION SYSTEMS</h1>
+            <p class="text-[10px] text-orange-500 font-mono tracking-widest mt-0.5 uppercase font-bold">LOCAL CUSTOMER ACQUISITION INFRASTRUCTURE // ATX</p>
         </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="relative z-10 px-6 lg:px-12 pt-12 pb-20 lg:pt-20 lg:pb-32">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-            We Catch the Customers<br />
-            <span className="bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">
-              Your Competitors Miss.
-            </span>
-          </h2>
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-            We build high-converting local business websites and equip them with dedicated local tracking phone numbers.
-            When a hot lead finds your business online, our automated standby systems make sure they get a text response
-            within 60 seconds—securing the job for your crew before they call the next company on Google.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={scrollToDemo}
-              className="px-8 py-4 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-semibold rounded-xl text-lg transition-all duration-400 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25"
-            >
-              Test the Missed Call System
-            </button>
-            <button
-              onClick={scrollToPricing}
-              className="px-8 py-4 bg-transparent border-2 border-gray-600 hover:border-gray-400 text-white font-semibold rounded-xl text-lg transition-all duration-400 hover:scale-105"
-            >
-              View Our Pricing Packages
-            </button>
-          </div>
+        <div class="flex items-center gap-2 bg-[#111723] border border-gray-800 px-3 py-1.5 rounded-xl">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_#10b981]"></span>
+            <span class="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-wide">Local Lead Generation Systems</span>
         </div>
-      </section>
+    </header>
 
-      {/* Services Matrix */}
-      <section className="relative z-10 px-6 lg:px-12 py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            {/* Service 1 */}
-            <div className="group bg-[#0b1120] border border-[#1f2937] rounded-xl p-8 transition-all duration-400 hover:scale-[1.02] hover:border-gray-600">
-              <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center mb-6 transition-transform duration-400 group-hover:scale-110">
-                <Phone className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-4">24/7 Missed Call Rescue</h3>
-              <p className="text-gray-400 leading-relaxed">
-                We link a dedicated local tracking number to your cell phone. If you are out in the field and miss a call,
-                our system instantly texts the customer back automatically to book the job before they call your competitors.
-              </p>
-            </div>
-
-            {/* Service 2 */}
-            <div className="group bg-[#0b1120] border border-[#1f2937] rounded-xl p-8 transition-all duration-400 hover:scale-[1.02] hover:border-gray-600">
-              <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6 transition-transform duration-400 group-hover:scale-110">
-                <Globe className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-4">High-Converting Web Storefronts</h3>
-              <p className="text-gray-400 leading-relaxed">
-                We design and launch custom, lightning-fast dark-mode portfolios built specifically to look professional,
-                display your local service areas, and drive high-intent calls straight to your crew.
-              </p>
-            </div>
-
-            {/* Service 3 */}
-            <div className="group bg-[#0b1120] border border-[#1f2937] rounded-xl p-8 transition-all duration-400 hover:scale-[1.02] hover:border-gray-600">
-              <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center mb-6 transition-transform duration-400 group-hover:scale-110">
-                <Settings className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-4">Turnkey System Setup</h3>
-              <p className="text-gray-400 leading-relaxed">
-                We handle 100% of the technical setup. We secure your local phone number, host your files, and route
-                your data into a simple, private Google Sheet tracking spreadsheet so you can see your leads in real-time.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Demo Section */}
-      <section id="demo-section" className="relative z-10 px-6 lg:px-12 py-16 lg:py-24">
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-[#0b1120] border border-[#1f2937] rounded-xl p-8 lg:p-12">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-3 h-3 bg-orange-500 rounded-full animate-pulse" />
-              <h3 className="text-2xl font-bold">Test Our Instant Response System</h3>
-            </div>
-            <p className="text-gray-400 mb-8 leading-relaxed">
-              Type your business name and callback number below to simulate how our background framework captures
-              a local lead and fires an instantaneous routing handshake alert.
-            </p>
-            <div className="space-y-4 mb-8">
-              <input
-                type="text"
-                placeholder='e.g., Quality Tree & Lawn'
-                value={companyName}
-                onChange={(e) => setCompanyName(e.target.value)}
-                className="w-full px-5 py-4 bg-[#030712] border border-[#1f2937] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors duration-300"
-              />
-              <input
-                type="text"
-                placeholder='773-748-3321'
-                value={mobileNumber}
-                onChange={(e) => setMobileNumber(e.target.value)}
-                className="w-full px-5 py-4 bg-[#030712] border border-[#1f2937] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors duration-300"
-              />
-            </div>
-            <button
-              onClick={handleTestSystem}
-              disabled={!companyName.trim() || !mobileNumber.trim()}
-              className="w-full px-8 py-4 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 disabled:from-gray-600 disabled:to-gray-600 disabled:cursor-not-allowed text-white font-semibold rounded-xl text-lg transition-all duration-400 hover:scale-[1.02] disabled:hover:scale-100"
-            >
-              Test the Instant Response System
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Activity Log Terminal */}
-      <section className="relative z-10 px-6 lg:px-12 py-16 lg:py-24">
-        <div className="max-w-3xl mx-auto">
-          <div className="bg-[#030712] border border-[#1f2937] rounded-xl p-6 lg:p-8 font-mono text-sm">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-500" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                <div className="w-3 h-3 rounded-full bg-green-500" />
-              </div>
-              <span className="text-gray-500 ml-4 text-xs">pipeline_monitor.log</span>
-            </div>
-            <div className="space-y-3 text-gray-300">
-              <div className="flex items-start gap-3 group hover:bg-[#0b1120]/50 px-3 py-2 rounded transition-colors duration-300">
-                <span className="text-emerald-400 font-semibold">[System Active]</span>
-                <span>Monitoring local 512 area code tracking numbers...</span>
-              </div>
-              <div className="flex items-start gap-3 group hover:bg-[#0b1120]/50 px-3 py-2 rounded transition-colors duration-300">
-                <span className="text-orange-400 font-semibold">[Missed Call Logged]</span>
-                <span>Target Lead: Quality Tree & Lawn → Automated Callback Text Dispatched.</span>
-              </div>
-              <div className="flex items-start gap-3 group hover:bg-[#0b1120]/50 px-3 py-2 rounded transition-colors duration-300">
-                <span className="text-blue-400 font-semibold">[Queue Standby]</span>
-                <span>Monitoring System Queue for Lead: Fix It Rocket.</span>
-              </div>
-              <div className="flex items-start gap-3 group hover:bg-[#0b1120]/50 px-3 py-2 rounded transition-colors duration-300">
-                <span className="text-emerald-400 font-semibold">[System Check]</span>
-                <span>100% System Uptime // All Routing Lines Active.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section id="pricing-section" className="relative z-10 px-6 lg:px-12 py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Turnkey Growth Packages</h2>
-          <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
-            {/* Core */}
-            <div className="group bg-[#0b1120] border border-[#1f2937] rounded-xl p-8 transition-all duration-400 hover:scale-[1.02] hover:border-gray-600">
-              <div className="flex items-center gap-3 mb-6">
-                <Building2 className="w-8 h-8 text-orange-500" />
-                <h3 className="text-xl font-bold">Core Infrastructure Setup</h3>
-              </div>
-              <div className="mb-6">
-                <p className="text-3xl font-extrabold text-white">$1,000.00</p>
-                <p className="text-sm text-gray-400 mt-1">Setup Fee (One-time) + $199.00 / month</p>
-              </div>
-              <ul className="space-y-4 mb-8">
-                {[
-                  '1 custom local dark-mode website',
-                  '1 dedicated local tracking phone number supplied and hosted by us',
-                  'Automated missed-call text-back logic',
-                  '1 private Google Sheet lead tracker'
-                ].map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <button className="w-full px-6 py-3 border border-gray-600 hover:border-orange-500 hover:text-orange-500 rounded-xl font-semibold transition-all duration-400">
-                Get Started
-              </button>
-            </div>
-
-            {/* Growth - Most Popular */}
-            <div className="group bg-[#0b1120] border-2 border-blue-500/50 shadow-[0_0_30px_rgba(59,130,246,0.15)] rounded-xl p-8 transition-all duration-400 hover:scale-[1.02] relative">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                <span className="bg-gradient-to-r from-blue-500 to-orange-500 text-white text-sm font-bold px-4 py-1.5 rounded-full">
-                  MOST POPULAR SETUP
-                </span>
-              </div>
-              <div className="flex items-center gap-3 mb-6">
-                <Zap className="w-8 h-8 text-blue-500" />
-                <h3 className="text-xl font-bold">Growth Acquisition Setup</h3>
-              </div>
-              <div className="mb-6">
-                <p className="text-3xl font-extrabold text-white">$2,500.00</p>
-                <p className="text-sm text-gray-400 mt-1">Setup Fee (One-time) + $299.00 / month</p>
-              </div>
-              <ul className="space-y-4 mb-8">
-                {[
-                  'Multi-page local business web framework',
-                  'Dedicated local number setup',
-                  'Advanced custom automated text-back response scripts',
-                  'Priority lead routing straight to up to 3 separate field crew cell phones'
-                ].map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <button className="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-orange-500 hover:from-blue-600 hover:to-orange-600 rounded-xl font-semibold transition-all duration-400">
-                Get Started
-              </button>
-            </div>
-
-            {/* Enterprise */}
-            <div className="group bg-[#0b1120] border border-[#1f2937] rounded-xl p-8 transition-all duration-400 hover:scale-[1.02] hover:border-gray-600">
-              <div className="flex items-center gap-3 mb-6">
-                <Users className="w-8 h-8 text-amber-500" />
-                <h3 className="text-xl font-bold">Enterprise Automation Setup</h3>
-              </div>
-              <div className="mb-6">
-                <p className="text-3xl font-extrabold text-white">$5,000.00</p>
-                <p className="text-sm text-gray-400 mt-1">Setup Fee (One-time) + $499.00 / month</p>
-              </div>
-              <ul className="space-y-4 mb-8">
-                {[
-                  'Engineered for multi-location commercial operators',
-                  'Unlimited dark-mode website layouts',
-                  'Multi-channel custom tracking number arrays',
-                  'Full enterprise CRM integration',
-                  'Dedicated priority support'
-                ].map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <button className="w-full px-6 py-3 border border-gray-600 hover:border-orange-500 hover:text-orange-500 rounded-xl font-semibold transition-all duration-400">
-                Contact Us
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="relative z-10 px-6 lg:px-12 py-16 lg:py-24">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            {[
-              {
-                q: "Do I have to buy my own phone number or set up tech software?",
-                a: "No. We handle everything. We buy, host, and supply the local tracking phone number for you. There's no software for you to install or configure. We take care of all the technical setup so you can focus on running your business."
-              },
-              {
-                q: "What happens if I miss a customer call while working on a job site?",
-                a: "Our system detects the missed call instantly and automatically sends a professional text message to your customer within 60 seconds. This keeps them engaged and prevents them from calling your competitors while you're busy working."
-              },
-              {
-                q: "Are there any hidden fees or hosting platform costs?",
-                a: "No hidden fees. The monthly fee covers everything: phone number hosting, website hosting, text message automation, and your Google Sheet lead tracker. You'll never see surprise charges on your bill."
-              }
-            ].map((faq, i) => (
-              <div
-                key={i}
-                className="bg-[#0b1120] border border-[#1f2937] rounded-xl overflow-hidden"
-              >
-                <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-[#030712]/50 transition-colors duration-300"
-                >
-                  <span className="font-semibold text-lg pr-4">{faq.q}</span>
-                  {openFaq === i ? (
-                    <ChevronUp className="w-5 h-5 text-orange-500 flex-shrink-0" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-gray-500 flex-shrink-0" />
-                  )}
-                </button>
-                {openFaq === i && (
-                  <div className="px-6 pb-5 text-gray-400 leading-relaxed animate-fade-in">
-                    {faq.a}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Location Footer */}
-      <section className="relative z-10 px-6 lg:px-12 py-16">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-r from-[#0b1120] to-[#030712] border border-[#1f2937] rounded-xl p-8 text-center">
-            <h3 className="text-xl font-bold mb-2">Primary System Deployment Footprint</h3>
-            <p className="text-gray-400 text-lg">Austin / Leander / Round Rock, Texas Service Area Hub</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="relative z-10 px-6 lg:px-12 py-8 border-t border-[#1f2937]">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-gray-500 text-sm">
-            © 2026 GORDON ACQUISITION SYSTEMS. ALL RIGHTS RESERVED. POWERED BY SECURE PHONE ROUTING & AUTOMATED LEAD LOGGING INFRASTRUCTURE.
-          </p>
-        </div>
-      </footer>
-    </div>
-  );
-}
-
-export default App;
-        <!-- Technical Capabilities Matrix (Cards Grow on Hover) -->
-        <section id="services" class="space-y-12">
-            <div class="text-center max-w-xl mx-auto space-y-2">
-                <p class="text-xs font-mono font-bold text-orange-500 tracking-widest uppercase">WHAT WE DEPLOY</p>
-                <h3 class="text-3xl font-black text-white tracking-tight">Infrastructure Services Matrix</h3>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-[#111622] border border-gray-900 p-8 rounded-2xl hover-scale cursor-pointer group">
-                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 mb-6 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.72l.54 2.22a1 1 0 01-.27.94l-2.03 2.03a15.11 15.11 0 005.67 5.67l2.03-2.03a1 1 0 01.94-.27l2.22.54a1 1 0 01.72.94V19a2 2 0 01-2 2h-1C9.71 21 3 14.29 3 7V5z"/></svg>
-                    </div>
-                    <h4 class="text-lg font-bold text-white mb-3">24/7 Missed Call Rescue</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed font-light">We link a dedicated local tracking number to your cell phone. If you are out in the field and miss a call, our system instantly texts the customer back automatically to book the job before they call your competitors.</p>
+    <!-- Main Content Workspace -->
+    <main class="relative z-10 max-w-6xl w-full mx-auto px-6 py-16 space-y-32">
+        
+        <!-- Hero Section -->
+        <section class="grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-block bg-orange-500/10 border border-orange-500/20 px-3 py-1 rounded-full text-[10px] font-mono text-orange-400 font-bold uppercase tracking-wider">
+                    ★ SYSTEM HUB ACTIVE
                 </div>
-
-                <div class="bg-[#111622] border border-gray-900 p-8 rounded-2xl hover-scale cursor-pointer group">
-                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-6 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                    </div>
-                    <h4 class="text-lg font-bold text-white mb-3">High-Converting Web Storefronts</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed font-light">We design and launch custom, lightning-fast dark-mode portfolios built specifically to look professional, display your local service areas, and drive high-intent calls straight to your crew.</p>
+                <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+                    We Catch the Customers Your <span class="text-orange-500">Competitors Miss.</span>
+                </h2>
+                <p class="text-gray-400 text-sm sm:text-base leading-relaxed font-light max-w-xl">
+                    We build high-converting local business websites and equip them with dedicated local tracking phone numbers. When a hot lead finds your business online, our automated standby systems make sure they get a text response within 60 seconds—securing the job for your crew before they call the next company on Google.
+                </p>
+                <div class="pt-2 flex flex-wrap gap-4 text-xs font-mono font-bold">
+                    <a href="#simulator" class="bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white px-6 py-3.5 rounded-xl transition shadow-lg shadow-orange-500/10">
+                        Test the Missed Call System
+                    </a>
+                    <a href="#pricing" class="bg-[#111723] hover:bg-[#161e2e] text-gray-300 px-6 py-3.5 rounded-xl border border-gray-800 transition">
+                        View Our Pricing Packages
+                    </a>
                 </div>
+            </div>
 
-                <div class="bg-[#111622] border border-gray-900 p-8 rounded-2xl hover-scale cursor-pointer group">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-6 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            <!-- Missed Call Simulator Card Layout -->
+            <div id="simulator" class="lg:col-span-5 w-full max-w-md mx-auto">
+                <div class="bg-[#111723] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-2xl relative overflow-hidden border-t-2 border-t-orange-500">
+                    <div class="mb-6">
+                        <h3 class="text-base font-bold text-white tracking-tight flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-ping"></span>
+                            Test Our Instant Response System
+                        </h3>
+                        <p class="text-xs text-gray-400 mt-1 leading-relaxed">
+                            Type your business name and callback number below to simulate how our background framework captures a local lead and fires an instantaneous routing handshake alert.
+                        </p>
                     </div>
-                    <h4 class="text-lg font-bold text-white mb-3">Turnkey System Setup</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed font-light">We handle 100% of the technical setup. We secure your local phone number, host your files, and route your data into a simple, private Google Sheet tracking spreadsheet so you can see your leads in real-time.</p>
+                    <form class="space-y-4" onsubmit="event.preventDefault(); alert('[System Connection Successful] Your simulation lead has been logged. In a live setup, your customer would receive an automated text back within 60 seconds, and the lead would pop up instantly on your tracking sheet.');">
+                        <div>
+                            <label class="block text-[10px] font-mono uppercase tracking-wider text-gray-400 mb-1.5 font-bold">Your Company Name</label>
+                            <input type="text" required placeholder="e.g. Quality Tree & Lawn" class="w-full bg-[#090d16] border border-gray-800 focus:border-orange-500 rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition placeholder-gray-700">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-mono uppercase tracking-wider text-gray-400 mb-1.5 font-bold">Your Mobile Number</label>
+                            <input type="tel" required placeholder="773-748-3321" class="w-full bg-[#090d16] border border-gray-800 focus:border-orange-500 rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition placeholder-gray-700">
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white font-bold text-sm py-3.5 px-4 rounded-xl transition shadow-md shadow-orange-500/10">
+                            Test the Instant Response System
+                        </button>
+                    </form>
+                    <div class="mt-4 pt-4 border-t border-gray-800 flex justify-between items-center text-[10px] font-mono text-gray-500">
+                        <span>STATUS: HOOK_ARMED</span>
+                        <span class="text-blue-400">SECURE DISPATCH</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Plain-English Public Activity Log Terminal Layout Component -->
+        <!-- Infrastructure Services Matrix Section -->
+        <section class="space-y-12">
+            <div class="text-center max-w-xl mx-auto space-y-1">
+                <p class="text-xs font-mono font-bold text-orange-500 tracking-widest uppercase">WHAT WE DEPLOY</p>
+                <h3 class="text-2xl font-black text-white tracking-tight">Infrastructure Services Matrix</h3>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-[#111723] border border-gray-900 p-6 rounded-2xl hover-card cursor-pointer">
+                    <div class="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 mb-4 font-bold text-sm font-mono">01</div>
+                    <h4 class="text-base font-bold text-white mb-2">24/7 Missed Call Rescue</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed font-light">We link a dedicated local tracking number to your cell phone. If you are out in the field and miss a call, our system instantly texts the customer back automatically to book the job before they call your competitors.</p>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="bg-[#111723] border border-gray-900 p-6 rounded-2xl hover-card cursor-pointer">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4 font-bold text-sm font-mono">02</div>
+                    <h4 class="text-base font-bold text-white mb-2">High-Converting Web Storefronts</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed font-light">We design and launch custom, lightning-fast dark-mode portfolios built specifically to look professional, display your local service areas, and drive high-intent calls straight to your crew.</p>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="bg-[#111723] border border-gray-900 p-6 rounded-2xl hover-card cursor-pointer">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-4 font-bold text-sm font-mono">03</div>
+                    <h4 class="text-base font-bold text-white mb-2">Turnkey System Setup</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed font-light">We handle 100% of the technical setup. We secure your local phone number, host your files, and route your data into a simple, private Google Sheet tracking spreadsheet so you can see your leads in real-time.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activity Log Console Tracker -->
         <section class="max-w-4xl mx-auto space-y-6">
             <div class="text-center space-y-1">
-                <p class="text-xs font-mono font-bold text-blue-400 uppercase tracking-widest">LIVE DISPATCH ACTIVE LOG</p>
-                <h3 class="text-2xl font-black text-white tracking-tight">System Tracking Ticker</h3>
+                <p class="text-xs font-mono text-blue-400 uppercase tracking-widest">LIVE DISPATCH ACTIVE LOG</p>
+                <h3 class="text-xl font-black text-white tracking-tight">System Tracking Ticker</h3>
             </div>
-            
-            <div class="bg-[#050911] border border-gray-800 rounded-xl overflow-hidden shadow-2xl font-mono text-xs">
-                <div class="bg-[#111622] px-4 py-3 border-b border-gray-900 flex justify-between items-center text-gray-500">
-                    <div class="flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
-                        <span class="ml-2 text-slate-400">system_activity_monitor.sh</span>
+            <div class="bg-[#050912] border border-gray-800 rounded-xl overflow-hidden shadow-2xl font-mono text-[11px]">
+                <div class="bg-[#111723] px-4 py-2.5 border-b border-gray-900 flex justify-between items-center text-gray-500">
+                    <div class="flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-red-500/60"></span>
+                        <span class="w-2 h-2 rounded-full bg-yellow-500/60"></span>
+                        <span class="w-2 h-2 rounded-full bg-emerald-500/60"></span>
+                        <span class="ml-1 text-gray-400 text-[10px]">system_activity_monitor.sh</span>
                     </div>
-                    <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded flex items-center gap-1.5">
-                        <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span> SYSTEM RUNNING
+                    <span class="text-[9px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded flex items-center gap-1">
+                        <span class="w-1 h-1 bg-emerald-400 rounded-full animate-pulse"></span> SYSTEM RUNNING
                     </span>
                 </div>
-                <div class="p-6 space-y-3 text-slate-300">
-                    <p class="text-gray-500">[System Active] Monitoring local 512 area code tracking numbers...</p>
-                    <p class="text-emerald-400 font-bold">🟢 [Missed Call Logged] Target Lead: Quality Tree & Lawn -> Automated Callback Text Dispatched.</p>
-                    <p class="text-amber-400 font-bold">🟡 [Queue Standby] Monitoring System Queue for Lead: Fix It Rocket.</p>
-                    <p class="text-blue-400 font-bold">🔵 [System Check] 100% System Uptime // All Routing Lines Active.</p>
-                    <div class="flex gap-6 text-[10px] text-gray-500 pt-3 font-bold justify-center md:justify-start border-t border-gray-900 mt-2">
-                        <span>LOOP CHECK: 15-MIN INTERVAL</span>
-                        <span>STANDBY STATUS: ACTIVE</span>
+                <div class="p-5 space-y-2 text-gray-400">
+                    <p class="text-gray-600">[System Active] Monitoring local 512 area code tracking numbers...</p>
+                    <p class="text-emerald-400"><span class="font-bold">🟢 [Missed Call Catch]:</span> Quality Tree & Lawn -> Response Text Dispatched Successfully.</p>
+                    <p class="text-amber-400"><span class="font-bold">🟡 [Standby Tracking]:</span> Active Monitor Queue On Lead State: Fix It Rocket.</p>
+                    <p class="text-blue-400"><span class="font-bold">🔵 [Uptime Secure]:</span> 100% Core Infrastructure Active // All Lines Standing By.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Onboarding Packages Pricing Matrix -->
+        <section id="pricing" class="space-y-12">
+            <div class="text-center max-w-xl mx-auto space-y-1">
+                <p class="text-xs font-mono font-bold text-orange-500 tracking-widest uppercase">STRIPE DEPLOYMENT PACKAGES</p>
+                <h3 class="text-2xl font-black text-white tracking-tight">Turnkey Growth Packages</h3>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+                <!-- Core Card -->
+                <div class="bg-[#111723] border border-gray-900 p-6 rounded-2xl flex flex-col justify-between hover-card cursor-pointer">
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-base font-bold text-white">Core Infrastructure</h4>
+                            <p class="text-[11px] text-gray-400 mt-0.5">Ideal for local service firms scaling up.</p>
+                        </div>
+                        <div class="border-t border-gray-800 pt-3">
+                            <div class="text-xl font-black text-white">$1,000.00 <span class="text-[10px] text-gray-500 font-normal">Setup Fee</span></div>
+                            <div class="text-xs font-bold text-blue-400 mt-0.5">$199.00 / mo management</div>
+                        </div>
+                        <ul class="space-y-2 text-[11px] text-gray-400 border-t border-gray-800 pt-3 font-light">
+                            <li>✔ 1 Custom dark-mode storefront website</li>
+                            <li>✔ Local 512 tracking number supplied by us</li>
+                            <li>✔ Automated missed-call text-back system</li>
+                            <li>✔ Private Google Sheet tracking dashboard</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6">
+                        <a href="#" class="block text-center w-full bg-[#090d16] hover:bg-[#161f31] text-white text-xs font-bold py-3 px-4 rounded-xl border border-gray-800 transition">Deploy Core Tier</a>
+                    </div>
+                </div>
+
+                <!-- Growth Card -->
+                <div class="bg-[#111723] border-2 border-orange-500 p-6 rounded-2xl flex flex-col justify-between hover-card cursor-pointer relative featured-glow">
+                    <span class="absolute top-0 right-0 bg-gradient-to-l from-orange-500 to-amber-600 text-[8px] font-mono font-black tracking-wider text-white px-3 py-1 rounded-bl-xl shadow-md">MOST POPULAR</span>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-base font-bold text-white">Growth Acquisition</h4>
+                            <p class="text-[11px] text-orange-300 mt-0.5">Engineered for expanding trade contractors.</p>
+                        </div>
+                        <div class="border-t border-gray-800 pt-3">
+                            <div class="text-2xl font-black text-white">$2,500.00 <span class="text-[10px] text-gray-500 font-normal">Setup Fee</span></div>
+                            <div class="text-xs font-bold text-orange-400 mt-0.5">$299.00 / mo management</div>
+                        </div>
+                        <ul class="space-y-2 text-[11px] text-gray-300 border-t border-gray-800 pt-3 font-light">
+                            <li class="text-orange-400 font-medium">✔ Multi-page local service framework</li>
+                            <li>✔ Local tracking phone number setup</li>
+                            <li>✔ Advanced custom automated response scripts</li>
+                            <li>✔ Priority lead routing to 3 crew cell phones</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6">
+                        <a href="#" class="block text-center w-full bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white text-xs font-bold py-3 px-4 rounded-xl transition">Deploy Growth Tier</a>
+                    </div>
+                </div>
+
+                <!-- Enterprise Card -->
+                <div class="bg-[#111723] border border-gray-900 p-6 rounded-2xl flex flex-col justify-between hover-card cursor-pointer">
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-base font-bold text-white">Enterprise Automation</h4>
+                            <p class="text-[11px] text-gray-400 mt-0.5">Built for multi-location operations.</p>
+                        </div>
+                        <div class="border-t border-gray-800 pt-3">
+                            <div class="text-xl font-black text-white">$5,000.00 <span class="text-[10px] text-gray-500 font-normal">Setup Fee</span></div>
+                            <div class="text-xs font-bold text-purple-400 mt-0.5">$499.00 / mo management</div>
+                        </div>
+                        <ul class="space-y-2 text-[11px] text-gray-400 border-t border-gray-800 pt-3 font-light">
+                            <li>✔ Unlimited high-interception layouts</li>
+                            <li>✔ Multi-channel custom phone arrays</li>
+                            <li>✔ Full enterprise CRM integration maps</li>
+                            <li>✔ Dedicated priority support engineer</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6">
+                        <a href="#" class="block text-center w-full bg-[#090d16] hover:bg-[#161f31] text-white text-xs font-bold py-3 px-4 rounded-xl border border-gray-800 transition">Deploy Enterprise Tier</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Turnkey Growth Packages Pricing Grid -->
-        <section id="pricing" class="space-y-12">
-            <div class="text-center max-w-xl mx-auto space-y-2">
-                <p class="text-xs font-mono font-bold text-amber-500 tracking-widest uppercase">STRIPE DEPLOYMENT PACKAGES</p>
-                <h3 class="text-3xl font-black text-white tracking-tight">Turnkey Growth Packages</h3>
+        <!-- Frequently Asked Questions Accordion Details -->
+        <section class="max-w-4xl mx-auto space-y-8">
+            <div class="text-center space-y-1">
+                <p class="text-xs font-mono text-gray-500 uppercase tracking-widest">SYSTEM QUESTIONS</p>
+                <h3 class="text-xl font-black text-white tracking-tight">Frequently Asked Questions</h3>
             </div>
+            <div class="space-y-4 text-xs sm:text-sm">
+                <details class="bg-[#111723] border border-gray-900 rounded-xl p-4 cursor-pointer group" open>
+                    <summary class="font-bold text-white flex justify-between items-center list-none select-none">
+                        Do I have to buy my own phone number or set up tech software?
+                        <span class="text-orange-500 group-open:rotate-180 transition duration-300">▼</span>
+                    </summary>
+                    <p class="text-gray-400 text-xs mt-2.5 leading-relaxed font-light">
+                        No, you don't touch a single piece of software. We completely secure, buy, and host your local tracking phone number for you, design your website storefront, and route all system logic directly to your current cell phone so you can operate your business normally.
+                    </p>
+                </details>
+                <details class="bg-[#111723] border border-gray-900 rounded-xl p-4 cursor-pointer group">
+                    <summary class="font-bold text-white flex justify-between items-center list-none select-none">
+                        What happens if I miss a customer call while working on a job site?
+                        <span class="text-orange-500 group-open:rotate-180 transition duration-300">▼</span>
+                    </summary>
+                    <p class="text-gray-400 text-xs mt-2.5 leading-relaxed font-light">
 
-            <div class="grid lg:grid-cols-3 gap-8 items-stretch">
-                <!-- Card 1 -->
-                <div class="bg-[#111622] border border-gray-900 p-8 rounded-2xl flex flex-col justify-between hover-scale cursor-pointer">
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="text-xl font-bold text-white">Core Infrastructure Setup</h4>
-                            <p class="text-xs text-gray-400 mt-1">Ideal for emerging local service firms scaling operations.</p>
-                        </div>
-                        <div class="border-t border-gray-900 pt-4">
-                            <div class="text-3xl font-black text-white">$1,000.00 <span class="text-xs text-gray-500 font-normal">Setup Fee</span></div>
-                            <div class="text-base font-bold text-blue-400 mt-0.5">$199.00 <span class="text-xs text-gray-400 font-normal">/ month recurring</span></div>
-                        </div>
-                        <ul class="space-y-3 text-xs text-gray-400 font-light border-t border-gray-900 pt-4">
-                            <li>✔ 1 custom local dark-mode website layout</li>
-                            <li>✔ 1 dedicated local tracking phone number supplied & hosted by us</li>
-                            <li>✔ Automated missed-call text-back script logic</li>
-                            <li>✔ 1 private Google Sheet lead tracking system</li>
-                        </ul>
-                    </div>
-                    <div class="pt-8">
-                        <a href="#" class="block text-center w-full bg-[#0b0f17] hover:bg-[#121824] text-white text-xs font-bold py-3.5 px-4 rounded-xl border border-gray-800 transition duration-200">
-                            Deploy Core Infrastructure
-                        </a>
-                    </div>
-                </div>
+                    </p>
+                </details>
+            </div>
+        </section>
 
-                <!-- Featured Card 2 -->
-                <div class="bg-[#111622] border-2 border-orange-500 p-8 rounded-2xl flex flex-col justify-between hover-scale cursor-pointer featured-glow relative">
-                    <span class="absolute top-0 right-0 bg-gradient-to-l from-orange-500 to-amber-600 text-[9px] font-mono font-black tracking-wider text-white px-4 py-1.5 rounded-bl-xl shadow-md">MOST POPULAR SETUP</span>
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="text-xl font-bold text-white">Growth Acquisition Setup</h4>
-                            <p class="text-xs text-orange-300 mt-1">Engineered specifically for expanding regional trade contractors.</p>
-                        </div>
-                        <div class="border-t border-gray-900 pt-4">
-                            <div class="text-3xl font-black text-white">$2,500.00 <span class="text-xs text-gray-500 font-normal">Setup Fee</span></div>
-                            <div class="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400 mt-0.5">$299.00 <span class="text-xs text-gray-300 font-normal">/ month recurring</span></div>
-                        </div>
-                        <ul class="space-y-3 text-xs text-gray-200 font-light border-t border-gray-900/60 pt-4">
-                            <li class="text-orange-400 font-medium">✔ Expandable multi-page local business web framework</li>
+        <!-- Geographic Trust Anchor Banner -->
+        <section class="max-w-4xl mx-auto pt-6">
+            <div class="bg-[#111723] border border-gray-800 rounded-xl p-4 text-center text-xs font-mono text-gray-400 shadow-md">
+                📍 Primary System Deployment Footprint: Austin / Leander / Round Rock, Texas Service Area Hub.
+            </div>
+        </section>
+    </main>
+
+    <!-- Structural Footer Asset Panel Layout -->
+    <footer class="relative z-10 max-w-6xl w-full mx-auto px-6 pb-8 mt-24 border-t border-gray-900 pt-6">
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left text-[11px] font-mono text-gray-500">
+            <p>&copy; 2026 GORDON ACQUISITION SYSTEMS. ALL RIGHTS RESERVED. POWERED BY SECURE PHONE ROUTING & AUTOMATED LEAD LOGGING INFRASTRUCTURE.</p>
+            <div class="flex gap-4 text-[10px]">
+                <span>SYSTEM ROUTING // ACTIVE</span>
+                <span>DATA LOG TRACKER // SYNCED</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
 
